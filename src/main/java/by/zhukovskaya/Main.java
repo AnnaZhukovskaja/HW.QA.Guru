@@ -9,8 +9,9 @@ public class Main {
         System.out.printf("Hello QA GURU!!!");
         System.out.printf("Conflict 2.1");
         System.out.printf("NO Conflict");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("no conflict");
+        }
         for (int i = 1; i <= 5; i++) {
 
             // Press Shift+F9 to start debugging your code. We have set one breakpoint
