@@ -14,7 +14,7 @@ public class GitHabSolutionsTest {
     }
 
     @Test
-    void pagesEnterpriseShouldHaveHeader() {
+    void pagesEnterpriseShouldHaveHeaderTest() {
         open("https://github.com/");
         $$(".HeaderMenu-item").findBy(text(" Solutions ")).hover();
         $(byTagAndText("a","Enterprise")).click();

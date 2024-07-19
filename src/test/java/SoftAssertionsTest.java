@@ -14,7 +14,7 @@ public class SoftAssertionsTest {
     }
 
     @Test
-    void pagesShouldHaveSoftAssertions() {
+    void pagesShouldHaveSoftAssertionsTest() {
         open("https://github.com/");
         $("[data-target='qbsearch-input.inputButtonText']").click();
         $("[name='query-builder-test']").setValue("selenide").pressEnter();

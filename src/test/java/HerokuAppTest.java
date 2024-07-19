@@ -14,15 +14,26 @@ public class HerokuAppTest {
     static void beforeAll(){
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
+        Configuration.baseUrl = "https://the-internet.herokuapp.com/drag_and_drop";
     }
 
     @Test
-    void checkDragAndDropMovements() {
-        open("https://the-internet.herokuapp.com/drag_and_drop");
-        $(byTagName("header")).shouldHave(text("A"));
+    void checkDragAndDropMovementsWithActionTest() {
+        open("");
+        $("#column-a").shouldHave(text("A"));
+        $("#column-b").shouldHave(text("B"));
         actions().moveToElement($("#column-a")).clickAndHold().moveToElement($("#column-b")).release().perform();
-        $(byTagName("header")).shouldHave(text("B"));
-        $("#column-b").dragAndDrop(to("#column-a"));
-        $(byTagName("header")).shouldHave(text("A"));
+        $("#column-a").shouldHave(text("B"));
+        $("#column-b").shouldHave(text("A"));
+    }
+
+    @Test
+    void checkDragAndDropMovementsTest() {
+        open("");
+        $("#column-a").shouldHave(text("A"));
+        $("#column-b").shouldHave(text("B"));
+        $("#column-a").dragAndDrop(to("#column-b"));
+        $("#column-a").shouldHave(text("B"));
+        $("#column-b").shouldHave(text("A"));
     }
 }
